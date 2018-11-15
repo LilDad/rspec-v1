@@ -5,3 +5,7 @@ Feature: Completing the checkout forms
 
   Scenario:
     Given I am on the site services page
+    When I fill the form and submit
+      | subtype            |
+      | Proposal           |
+      | Abstract           |
