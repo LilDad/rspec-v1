@@ -1,5 +1,5 @@
 module Pages
-  class Home
+  class QuotePage
     include PageObject
 
   end

@@ -13,7 +13,11 @@ module Routes
         home: {
           path: '/',
           page_class: Pages::Home
-        }
+        },
+        services: {
+          path: '/services/',
+          page_class: Pages::QuotePage
+      }
       }
     end
   end
