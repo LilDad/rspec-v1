@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rspec_v1@checkout_forms_feature.rcov" NAME="checkout_forms.feature Coverage Results" MODIFIED="1542265532850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rspec-v1" />
+    <SUITE FILE_PATH="coverage/rspec_v1@checkout_forms_feature.rcov" NAME="checkout_forms.feature Coverage Results" MODIFIED="1542265717104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rspec-v1" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="482450277">
