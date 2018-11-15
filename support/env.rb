@@ -6,10 +6,6 @@ require 'require_all'
 require 'fig_newton'
 require 'data_magic'
 
-require_all 'lib'
+# require_all 'lib'
 
 World(PageObject::PageFactory)
-
-PageObject::PageFactory.routes = {
-    default: [[HomePage, :services_tab]]
-}
