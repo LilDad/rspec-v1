@@ -3,9 +3,8 @@ Given(/^I am on the site (\w+) page$/) do |page|
   @current_page = page_for(page)
 end
 
+When(/^I fill the form and submit$/) do
 
-When(/^I fill the form and submit$/) do |table|
-  table.hashes .each do |hsh|
-    on(@current_page).subtype_options.should include hsh['subtype']
-  end
+  @browser.select_list(:id, 'subtype').options.to_a.sample.click
+
 end
