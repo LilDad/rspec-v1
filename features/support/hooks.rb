@@ -1,4 +1,5 @@
 require 'watir'
+require 'watir-scroll'
 
 Before do
   @cucumber_host = 'https://www.thesiswritingservice.com'

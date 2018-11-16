@@ -5,4 +5,4 @@ Feature: Completing the checkout forms
 
   Scenario:
     Given I am on the site services page
-    When I fill the form and submit
+    When I fill the form and submit. Data: "test", "e.bezhuraedgar@gmail.com"

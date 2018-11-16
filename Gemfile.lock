@@ -65,6 +65,8 @@ GEM
     watir (6.15.0)
       regexp_parser (~> 1.2)
       selenium-webdriver (~> 3.4, >= 3.4.1)
+    watir-scroll (0.4.0)
+      watir (>= 6.0)
     watir-webdriver (0.9.9)
       selenium-webdriver (>= 2.46.2)
     yml_reader (0.7)
@@ -82,6 +84,7 @@ DEPENDENCIES
   rspec
   rspec-expectations
   watir
+  watir-scroll
   watir-webdriver
 
 BUNDLED WITH

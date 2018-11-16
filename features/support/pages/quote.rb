@@ -5,7 +5,6 @@ module Pages
 
     select_list(:subtype, id: 'subtype')
 
-
     # def subtype_options
     #   subtype_element.options.collect(&:text)
     # end

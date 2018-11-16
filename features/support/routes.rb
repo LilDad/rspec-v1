@@ -17,7 +17,7 @@ module Routes
         services: {
           path: '/services/',
           page_class: Pages::QuotePage
-      }
+        }
       }
     end
   end
