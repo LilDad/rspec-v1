@@ -9,11 +9,21 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
   @browser.text_field(id: 'topic_paper').set data
 
   array = %w[paper type subtype subject urgency pages]
+
+  # Тестовая версия
   array.each do |arg|
     if @browser.select_list(id: arg).present?
-      @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample.click
+      value = @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample
+      @browser.select_list(id: arg, value: value).options.click
     end
   end
+
+  # Рабочая версия
+  # array.each do |arg|
+  #   if @browser.select_list(id: arg).present?
+  #     @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample.set
+  #   end
+  # end
 
   @browser.scroll.to([0, 300])
   @browser.checkbox(id: 'tc_checkbox').set
