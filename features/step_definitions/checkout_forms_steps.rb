@@ -13,8 +13,9 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
   # Тестовая версия
   array.each do |arg|
     if @browser.select_list(id: arg).present?
-      value = @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample
-      @browser.select_list(id: arg, value: value).options.click
+      @browser.select_list(id: arg).options.to_a.sample
+      @browser.select_list(id: arg).option.click
+      # @browser.select_list(id: arg).select(value)
     end
   end
 
