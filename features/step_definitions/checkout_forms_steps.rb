@@ -23,7 +23,7 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
 
   sleep 1
 
-  time = Time.now.strftime("%d-%m-%Y %H:%M:%S")
+  time = Time.now.strftime('%d-%m-%Y %H:%M:%S')
   save_screenshot time
 
   sleep 10
