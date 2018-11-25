@@ -1,9 +1,3 @@
-def save_screenshot
-  time = Time.now.strftime("%d-%m-%Y %H:%M:%S")
-  screenshot = "screenshots/#{time}.png"
-  @browser.driver.save_screenshot(screenshot)
-end
-
 Given(/^I am on the site (\w+) page$/) do |page|
   goto url_for(page)
   @current_page = page_for(page)
@@ -13,6 +7,7 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
   @browser.text_field(id: 'firstname').set data
   @browser.text_field(id: 'email').set email
   @browser.text_field(id: 'topic_paper').set data
+
   array = %w[paper type subtype subject urgency pages]
   array.each do |arg|
     if @browser.select_list(id: arg).present?
@@ -20,11 +15,17 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
       sleep 1
     end
   end
+
   @browser.scroll.to([0, 300])
   @browser.file_field.set('/home/e-bezura/Documents/Form testing/9mb.docx')
   @browser.checkbox(id: 'tc_checkbox').set
   @browser.button(id: 'send_quote').click
-  save_screenshot
+
+  sleep 1
+
+  time = Time.now.strftime("%d-%m-%Y %H:%M:%S")
+  save_screenshot time
+
   sleep 10
 end
 
