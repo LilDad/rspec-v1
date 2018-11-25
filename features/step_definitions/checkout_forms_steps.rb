@@ -17,7 +17,7 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
   end
 
   @browser.scroll.to([0, 300])
-  @browser.file_field.set('/home/e-bezura/Documents/Form testing/9mb.docx')
+  # @browser.file_field.set('/home/e-bezura/Documents/Form testing/9mb.docx')
   @browser.checkbox(id: 'tc_checkbox').set
   @browser.button(id: 'send_quote').click
 
@@ -26,7 +26,11 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
   time = Time.now.strftime('%d-%m-%Y %H:%M:%S')
   save_screenshot time
 
-  sleep 10
+  # sleep 10
+end
+
+Then(/^I send fill form$/) do
+  @browser.div(class: 'alert alert-success')
 end
 
 # Тестовая версия

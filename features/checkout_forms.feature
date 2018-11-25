@@ -6,3 +6,4 @@ Feature: Completing the checkout forms
   Scenario: test
     Given I am on the site services page
     When I fill the form and submit. Data: "test", "e.bezhuraedgar@gmail.com"
+    Then I send fill form
