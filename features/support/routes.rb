@@ -17,7 +17,11 @@ module Routes
         services: {
           path: '/services/',
           page_class: Pages::QuotePage
-        }
+        },
+        order: {
+          path: '/order/',
+          page_class: Pages::OrderPage
+      }
       }
     end
   end

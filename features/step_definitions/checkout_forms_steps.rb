@@ -3,7 +3,7 @@ Given(/^I am on the site (\w+) page$/) do |page|
   @current_page = page_for(page)
 end
 
-When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, email|
+When(/^I fill the Quote form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, email|
   @browser.text_field(id: 'firstname').set data
   @browser.text_field(id: 'email').set email
   @browser.text_field(id: 'topic_paper').set data
@@ -16,22 +16,60 @@ When(/^I fill the form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, emai
     end
   end
 
-  @browser.scroll.to([0, 300])
-  # @browser.file_field.set('/home/e-bezura/Documents/Form testing/9mb.docx')
+  element_scroll = @browser.element(id: 'firstname')
+  element_scroll.scroll.to
+
+  @browser.file_field(id: 'attachment').set ('/home/e-bezura/Documents/Form testing/9mb.docx')
   @browser.checkbox(id: 'tc_checkbox').set
   @browser.button(id: 'send_quote').click
 
   sleep 1
 
-  time = Time.now.strftime('%d-%m-%Y %H:%M:%S')
-  save_screenshot time
-
-  # sleep 10
+  save_screenshot 'Quote'
 end
 
 Then(/^I send fill form$/) do
   @browser.div(class: 'alert alert-success')
 end
+
+When(/^I fill the Order form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, email|
+
+  element_id_scroll 'discount'
+
+  # Step 1
+  array = %w[paper subtype urgency level style pages sources subject]
+  array.each do |arg|
+    if @browser.select_list(id: arg).present?
+      @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample.click
+      sleep 1
+    end
+  end
+
+  save_screenshot 'Order-1'
+
+  @browser.button(id: 'step-2').click
+  sleep 1
+
+  # Step 2
+  @browser.text_field(id: 'topic_paper').set data
+  @browser.checkbox(name: 'has_slides').set
+  sleep 1
+  @browser.select_list(id: 'slides').options.to_a.sample.click
+  sleep 1
+  @browser.checkbox(name: 'has_writer').set
+  sleep 1
+  @browser.text_field(id: 'writer').set data
+  @browser.textarea(id: 'comment').set data
+  @browser.file_field(id: 'attachment').set ('/home/e-bezura/Documents/Form testing/9mb.docx')
+
+  save_screenshot 'Order-2'
+  sleep 1
+
+  # Step 3
+
+  sleep 50
+end
+
 
 # Тестовая версия
 #
@@ -88,3 +126,5 @@ end
 # Если дроплист будет выбирать включенные значения
 # enabled_options = @browser.select_list(:class, 'preset-select').options.select(&:enabled?)
 # enabled_options.sample.click
+
+
