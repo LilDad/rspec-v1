@@ -1,6 +1,16 @@
 require 'watir'
 require 'watir-scroll'
 
+def pause
+  sleep 1
+end
+
+def cookie_bar_hide
+  if @browser.button(id: 'sitemanagerCookie').present?
+    @browser.button(id: 'sitemanagerCookie').click
+  end
+end
+
 def save_screenshot(name)
   time = Time.now.strftime('%d-%m-%Y %H:%M:%S')
 
