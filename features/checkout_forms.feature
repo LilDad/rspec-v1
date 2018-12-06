@@ -10,4 +10,4 @@ Feature: Completing the checkout forms
 
   Scenario: test Order form
     Given I am on the site order page
-    When I fill the Order form and submit. Data: "test", email: "e.bezhuraedgar@gmail.com", password: "11111",
+    When I fill the Order form and submit. Data: "test", email: "e.bezhuraedgar@gmail.com", password: "11111".

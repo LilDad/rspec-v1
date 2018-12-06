@@ -33,7 +33,7 @@ Then(/^I send fill form$/) do
   @browser.div(class: 'alert alert-success')
 end
 
-When(/^I fill the Order form and submit\. Data: "([^"]*)", email: "([^"]*)", password: "([^"]*)",$/) do |data, email, password|
+When(/^I fill the Order form and submit\. Data: "([^"]*)", email: "([^"]*)", password: "([^"]*)".$/) do |data, email, password|
   cookie_bar_hide
   element_id_scroll 'discount'
 
