@@ -5,17 +5,20 @@ end
 
 When(/^I fill the Quote form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data, email|
   cookie_bar_hide
-  @browser.text_field(id: 'firstname').set data
-  @browser.text_field(id: 'email').set email
-  @browser.text_field(id: 'topic_paper').set data
 
-  array = %w[paper type subtype subject urgency pages]
-  array.each do |arg|
-    if @browser.select_list(id: arg).present?
-      @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample.click
-      pause
-    end
-  end
+  @current_page.fill_form data, email
+  @current_page
+  # @browser.text_field(id: 'firstname').set data
+  # @browser.text_field(id: 'email').set email
+  # @browser.text_field(id: 'topic_paper').set data
+  #
+  # array = %w[paper type subtype subject urgency pages]
+  # array.each do |arg|
+  #   if @browser.select_list(id: arg).present?
+  #     @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample.click
+  #     pause
+  #   end
+  # end
 
   element_scroll = @browser.element(id: 'firstname')
   element_scroll.scroll.to

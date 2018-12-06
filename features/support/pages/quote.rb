@@ -1,12 +1,17 @@
 module Pages
   class QuotePage
     include PageObject
-    # include DataMagic
 
-    # select_list(:subtype, id: 'subtype')
+    text_field :firstname, id: 'firstname'
+    text_field :email, id: 'email'
+    text_field :topic_paper, topic_paper: 'topic_paper'
+    select_list :paper, id: 'paper'
+    
 
-    # def subtype_options
-    #   subtype_element.options.collect(&:text)
-    # end
+    def fill_form firstname, email
+      self.firstname = firstname
+      self.email = email
+      self.topic_paper = topic_paper
+    end
   end
 end
