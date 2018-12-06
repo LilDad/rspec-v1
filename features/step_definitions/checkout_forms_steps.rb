@@ -20,7 +20,7 @@ When(/^I fill the Quote form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data
   element_scroll = @browser.element(id: 'firstname')
   element_scroll.scroll.to
 
-  @browser.file_field(id: 'attachment').set ('/home/e-bezura/Documents/Form testing/9mb.docx')
+  @browser.file_field(id: 'attachment').set '/home/e-bezura/Documents/Form testing/9mb.docx'
   @browser.checkbox(id: 'tc_checkbox').set
   @browser.button(id: 'send_quote').click
 
@@ -61,7 +61,7 @@ When(/^I fill the Order form and submit\. Data: "([^"]*)", email: "([^"]*)", pas
   pause
   @browser.text_field(id: 'writer').set data
   @browser.textarea(id: 'comment').set data
-  @browser.file_field(id: 'attachment').set ('/home/e-bezura/Documents/Form testing/9mb.docx')
+  @browser.file_field(id: 'attachment').set '/home/e-bezura/Documents/Form testing/9mb.docx'
 
   save_screenshot 'Order-2'
   pause
@@ -85,7 +85,6 @@ When(/^I fill the Order form and submit\. Data: "([^"]*)", email: "([^"]*)", pas
 
   sleep 50
 end
-
 
 # Тестовая версия
 #

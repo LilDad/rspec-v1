@@ -18,7 +18,7 @@ def save_screenshot(name)
   @browser.driver.save_screenshot(screenshot)
 end
 
-def element_id_scroll id
+def element_id_scroll(id)
   element_scroll = @browser.element(id: id)
   element_scroll.scroll.to
 end

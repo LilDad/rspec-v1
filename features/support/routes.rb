@@ -21,7 +21,7 @@ module Routes
         order: {
           path: '/order/',
           page_class: Pages::OrderPage
-      }
+        }
       }
     end
   end
