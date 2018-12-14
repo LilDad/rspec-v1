@@ -8,10 +8,7 @@ When(/^I fill the Quote form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data
 
   @current_page.fill_form data, email
   @current_page
-  # @browser.text_field(id: 'firstname').set data
-  # @browser.text_field(id: 'email').set email
-  # @browser.text_field(id: 'topic_paper').set data
-  #
+
   # array = %w[paper type subtype subject urgency pages]
   # array.each do |arg|
   #   if @browser.select_list(id: arg).present?
