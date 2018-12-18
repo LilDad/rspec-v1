@@ -4,7 +4,7 @@ module Pages
 
     text_field :firstname, id: 'firstname'
     text_field :email, id: 'email'
-    text_field :topic_paper, topic_paper: 'topic_paper'
+    text_field :topic_paper, id: 'topic_paper'
     select_list :paper, id: 'paper'
     
 
