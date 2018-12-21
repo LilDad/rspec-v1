@@ -7,24 +7,8 @@ When(/^I fill the Quote form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data
   cookie_bar_hide
 
   @current_page.fill_form data, email
-  @current_page
-
-  # array = %w[paper type subtype subject urgency pages]
-  # array.each do |arg|
-  #   if @browser.select_list(id: arg).present?
-  #     @browser.select_list(id: arg).wait_until(&:present?).options.to_a.sample.click
-  #     pause
-  #   end
-  # end
-
   element_scroll = @browser.element(id: 'firstname')
   element_scroll.scroll.to
-
-  @browser.file_field(id: 'attachment').set '/home/e-bezura/Documents/Form testing/9mb.docx'
-  @browser.checkbox(id: 'tc_checkbox').set
-  @browser.button(id: 'send_quote').click
-
-  pause
 
   save_screenshot 'Quote'
 end
