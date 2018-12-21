@@ -9,7 +9,7 @@ module Pages
     checkbox :tc_checkbox, id: 'tc_checkbox'
     button :send_quote, id: 'send_quote'
 
-    def fill_form data, email
+    def fill_form(data, email)
       array = %w[paper type subtype subject urgency pages]
 
       self.firstname = data
@@ -17,7 +17,7 @@ module Pages
       self.topic_paper = data
       array.each do |value|
         if select_list(id: value).present?
-          self.rand_select_list value
+          rand_select_list value
           sleep 1
         end
       end
@@ -27,7 +27,7 @@ module Pages
       sleep 344
     end
 
-    def rand_select_list arg
+    def rand_select_list(arg)
       select_list(id: arg).wait_until(&:present?).options.to_a.sample.click
     end
   end
