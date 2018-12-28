@@ -14,7 +14,7 @@ When(/^I fill the Quote form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data
 end
 
 Then(/^I send fill form$/) do
-  @browser.div(class: 'alert alert-success')
+  @browser.div(class: 'alert alert-success!!!')
 end
 
 When(/^I fill the Order form and submit\. Data: "([^"]*)", email: "([^"]*)", password: "([^"]*)".$/) do |data, email, password|
