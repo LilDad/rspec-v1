@@ -13,7 +13,7 @@ When(/^I fill the Quote form and submit\. Data: "([^"]*)", "([^"]*)"$/) do |data
   save_screenshot 'Quote'
 end
 
-Then(/^I send fill form$/) do
+Then(/^I sent the filled form$/) do
   @browser.div(class: 'alert alert-success!!!')
 end
 
